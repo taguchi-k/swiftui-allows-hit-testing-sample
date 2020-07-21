@@ -15,33 +15,37 @@ struct ContentView: View {
 
     var body: some View {
 
-        VStack(spacing: .zero) {
-
+        VStack {
             Toggle(
                 "allowsHitTestingのON / OFF",
                 isOn: $allowsHitTesting
             )
-            .padding()
 
             Divider()
 
-            Text("allowsHitTestingがONのときは、タップで背景色が変化します。")
+            Text("allowsHitTestingがONのときは、ダブルタップで背景色が変化します。")
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
-                .contentShape(Rectangle())
-                .foregroundColor(
-                    Color(isDark ? .systemBackground : .label)
-                )
-                .allowsHitTesting(allowsHitTesting)
-                .onTapGesture {
+        }
+        .contentShape(Rectangle())
+        .padding()
+        .foregroundColor(
+            Color(isDark ? .systemBackground : .label)
+        )
+        .allowsHitTesting(allowsHitTesting)
+        .gesture(
+            TapGesture(count: 2)
+                .onEnded {
                     self.isDark.toggle()
                 }
-                .background(
-                    Color(isDark ? .label : .systemBackground)
-                )
-        }
+        )
+        .background(
+            Color(isDark ? .label : .systemBackground)
+                .edgesIgnoringSafeArea(.all)
+        )
+        .disabled(!allowsHitTesting)
     }
 }
 
