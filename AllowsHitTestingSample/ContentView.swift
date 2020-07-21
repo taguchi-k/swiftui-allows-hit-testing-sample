@@ -9,8 +9,37 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var allowsHitTesting = true
+    @State private var isDark = false
+
     var body: some View {
-        Text("Hello, World!")
+
+        VStack(spacing: .zero) {
+
+            Toggle(
+                "allowsHitTestingのON / OFF",
+                isOn: $allowsHitTesting
+            )
+            .padding()
+
+            Divider()
+
+            Text("allowsHitTestingがONのときは、タップで背景色が変化します。")
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity
+                )
+                .contentShape(Rectangle())
+                .foregroundColor(Color(isDark ? .systemBackground : .label))
+                .allowsHitTesting(allowsHitTesting)
+                .onTapGesture {
+                    self.isDark.toggle()
+                }
+                .background(
+                    Color(isDark ? .label : .systemBackground)
+                )
+        }
     }
 }
 
