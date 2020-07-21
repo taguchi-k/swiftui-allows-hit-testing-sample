@@ -31,7 +31,9 @@ struct ContentView: View {
                     maxHeight: .infinity
                 )
                 .contentShape(Rectangle())
-                .foregroundColor(Color(isDark ? .systemBackground : .label))
+                .foregroundColor(
+                    Color(isDark ? .systemBackground : .label)
+                )
                 .allowsHitTesting(allowsHitTesting)
                 .onTapGesture {
                     self.isDark.toggle()
