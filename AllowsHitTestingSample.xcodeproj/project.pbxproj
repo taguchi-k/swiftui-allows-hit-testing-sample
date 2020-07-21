@@ -15,6 +15,7 @@
 		96A9954624C735BB008D1732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A9954424C735BB008D1732 /* LaunchScreen.storyboard */; };
 		96A9955124C735BC008D1732 /* AllowsHitTestingSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9955024C735BC008D1732 /* AllowsHitTestingSampleTests.swift */; };
 		96A9955C24C735BC008D1732 /* AllowsHitTestingSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9955B24C735BC008D1732 /* AllowsHitTestingSampleUITests.swift */; };
+		96A9956A24C7432E008D1732 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96A9956924C7432E008D1732 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		96A9955724C735BC008D1732 /* AllowsHitTestingSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllowsHitTestingSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A9955B24C735BC008D1732 /* AllowsHitTestingSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowsHitTestingSampleUITests.swift; sourceTree = "<group>"; };
 		96A9955D24C735BC008D1732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A9956924C7432E008D1732 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		96A9952D24C735BA008D1732 = {
 			isa = PBXGroup;
 			children = (
+				96A9956924C7432E008D1732 /* README.md */,
 				96A9953824C735BA008D1732 /* AllowsHitTestingSample */,
 				96A9954F24C735BC008D1732 /* AllowsHitTestingSampleTests */,
 				96A9955A24C735BC008D1732 /* AllowsHitTestingSampleUITests */,
@@ -242,6 +245,7 @@
 			files = (
 				96A9954624C735BB008D1732 /* LaunchScreen.storyboard in Resources */,
 				96A9954324C735BB008D1732 /* Preview Assets.xcassets in Resources */,
+				96A9956A24C7432E008D1732 /* README.md in Resources */,
 				96A9954024C735BB008D1732 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
