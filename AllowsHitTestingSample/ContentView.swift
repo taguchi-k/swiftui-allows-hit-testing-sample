@@ -10,42 +10,43 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var allowsHitTesting = true
+    @State private var allowsDoubleTap = true
     @State private var isDark = false
 
     var body: some View {
+        content
+            .contentShape(Rectangle())
+            .padding()
+            .foregroundColor(
+                Color(isDark ? .systemBackground : .label)
+            )
+            .gesture(
+                allowsDoubleTap
+                    ? TapGesture(count: 2).onEnded { isDark.toggle() }
+                    // Tapを無視したい場合は、onEndedで何もしないTapGestureを返す
+                    : TapGesture().onEnded({})
+            )
+            .background(
+                Color(isDark ? .label : .systemBackground)
+                    .edgesIgnoringSafeArea(.all)
+            )
+    }
 
+    private var content: some View {
         VStack {
             Toggle(
-                "allowsHitTestingのON / OFF",
-                isOn: $allowsHitTesting
+                "allowsDoubleTapのON / OFF",
+                isOn: $allowsDoubleTap
             )
 
             Divider()
 
-            Text("allowsHitTestingがONのときは、ダブルタップで背景色が変化します。")
+            Text("allowsDoubleTapがONのときは、ダブルタップで背景色が変化します。")
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
         }
-        .contentShape(Rectangle())
-        .padding()
-        .foregroundColor(
-            Color(isDark ? .systemBackground : .label)
-        )
-        .allowsHitTesting(allowsHitTesting)
-        .gesture(
-            TapGesture(count: 2)
-                .onEnded {
-                    self.isDark.toggle()
-                }
-        )
-        .background(
-            Color(isDark ? .label : .systemBackground)
-                .edgesIgnoringSafeArea(.all)
-        )
-        .disabled(!allowsHitTesting)
     }
 }
 
